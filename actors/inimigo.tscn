@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://1xbp5cliqe2w"]
+
+[ext_resource type="Texture2D" uid="uid://cqsv4wkggxarg" path="res://Assets/Main Characters/Virtual Guy/Run (32x32).png" id="1_x2od0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phx6o"]
+size = Vector2(22, 25)
+
+[sub_resource type="Animation" id="Animation_n7wek"]
+resource_name = "walk"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("textura:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_x2od0")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("textura:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+
+[sub_resource type="Animation" id="Animation_rtmgj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("textura:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_x2od0")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("textura:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eay0c"]
+_data = {
+"RESET": SubResource("Animation_rtmgj"),
+"walk": SubResource("Animation_n7wek")
+}
+
+[node name="inimigo" type="CharacterBody2D"]
+position = Vector2(-1, -16)
+
+[node name="colisao" type="CollisionShape2D" parent="."]
+position = Vector2(-22, 3.5)
+shape = SubResource("RectangleShape2D_phx6o")
+
+[node name="textura" type="Sprite2D" parent="."]
+position = Vector2(-22, 3)
+texture = ExtResource("1_x2od0")
+hframes = 12
+frame = 6
+
+[node name="animacao" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_eay0c")
+}

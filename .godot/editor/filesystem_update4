@@ -1,0 +1,7 @@
+res://Mundo.tscn
+res://actors/player.tscn
+res://Assets/fruta.tscn
+res://Scenes/Menu.tscn
+res://Scenes/Mundo.tscn
+res://Scripts/Login.gd
+res://Scenes/World_01.tscn

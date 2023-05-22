@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgnali063qy46"]
+
+[ext_resource type="Script" path="res://Scripts/Login.gd" id="1_u12r8"]
+[ext_resource type="Texture2D" uid="uid://k3spf6djodgw" path="res://icon.svg" id="1_wshnk"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u12r8")
+
+[node name="lblUsuario" type="Label" parent="."]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 57.0
+offset_right = 230.0
+offset_bottom = 83.0
+text = "Usuario:"
+
+[node name="txtUsuario" type="TextEdit" parent="lblUsuario"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = -1.0
+offset_right = 322.0
+offset_bottom = 27.0
+
+[node name="lblSenha" type="Label" parent="."]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 127.0
+offset_right = 237.0
+offset_bottom = 153.0
+text = "Senha:"
+
+[node name="txtSenha" type="TextEdit" parent="lblSenha"]
+layout_mode = 0
+offset_left = 69.0
+offset_right = 318.0
+offset_bottom = 30.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 415.0
+offset_top = 183.0
+offset_right = 483.0
+offset_bottom = 221.0
+text = "Login"
+
+[node name="Icone godot" type="Sprite2D" parent="."]
+position = Vector2(94, 116)
+texture = ExtResource("1_wshnk")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
